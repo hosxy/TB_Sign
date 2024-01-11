@@ -12,10 +12,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Auto Sign
       env:
-        BDUSS: ${{ secrets.BDUSS }}
-        STOKEN: ${{ secrets.STOKEN }}
+        BDUSS_1: ${{ secrets.BDUSS_1 }}
+        STOKEN_1: ${{ secrets.STOKEN_1 }}
       run: |
         pip install --user beautifulsoup4
-        python tb_sign.py "$BDUSS:STOKEN"
+        python tb_sign.py "$BDUSS_1:$STOKEN_1"
         
         
