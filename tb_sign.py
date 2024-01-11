@@ -61,4 +61,6 @@ for i in sys.argv:
     s.cookies.update(cookies)
 
     TB_list = get_tieba_list(s)
+    print("-----------------------开始签到-----------------------")
     tieba_sign(s,TB_list)
+    print("-----------------------签到结束-----------------------")
