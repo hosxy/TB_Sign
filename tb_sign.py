@@ -56,7 +56,6 @@ for i in sys.argv:
         continue
 
     ck = i.split(":")
-    print(ck)
     cookies = {"BDUSS": ck[0], "STOKEN": ck[1]}
     s.cookies.clear_session_cookies()
     s.cookies.update(cookies)
