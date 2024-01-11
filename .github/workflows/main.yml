@@ -1,0 +1,21 @@
+name: Baidu Tieba Auto Sign
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 20 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Auto Sign
+      env:
+        BDUSS: ${{ secrets.BDUSS }}
+        STOKEN: ${{ secrets.STOKEN }}
+      run: |
+        pip install --user beautifulsoup4
+        python tb_sign.py "$BDUSS:STOKEN"
+        
+        
