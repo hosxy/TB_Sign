@@ -33,9 +33,9 @@ def tieba_sign(s:requests.Session,tieba_list:list) -> None:
         res = s.post(url,params=parameters)
         
         if res.json().get("no") == 0:
-            print(name + ": " + "签到成功")
+            print(tieba_list.index(name) + ": " + "签到成功")
         else:
-            print(name+ ": " + res.json().get("error"))
+            print(tieba_list.index(name) + ": " + res.json().get("error"))
         time.sleep(2)
 
 
